@@ -28,5 +28,5 @@ if __name__ == "__main__":
     if sys.argv[1] is int:
         app.run(port = sys.argv[1])
     else:
-        app.run(host='0.0.0.0', port=6000)
+        app.run(port=6000)
     #app.run()

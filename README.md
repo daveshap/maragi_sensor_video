@@ -1,6 +1,7 @@
 # camera microservice
 ## usage
 `python app.py <port>`
+
 Endpoint | Function | Description
 --- | --- | ---
 / | GET | Returns default dictionary

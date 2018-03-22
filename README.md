@@ -1,5 +1,7 @@
 # camera microservice
 
+provides out-of-the-box functionality for robotics and ai
+
 ## requirements
 
 * json

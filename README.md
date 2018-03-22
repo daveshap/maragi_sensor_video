@@ -4,10 +4,12 @@ provides out-of-the-box functionality for robotics and ai in the form of a simpl
 
 ## requirements
 
-* json
-* cv2 (OpenCV)
-* sys
+* python3
 * flask
+* time
+* json
+* sys
+* cv2
 
 ## usage
 

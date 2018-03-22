@@ -11,15 +11,7 @@
 
 `python app.py <port>`
 
-Endpoint | Function | Description
+Endpoint | Function | Description | Example
 --- | --- | ---
-/ | GET | Returns default dictionary
-/stereo | GET | Returns stereo dictionary
-
-## default dictionary
-
-`{time: unix epoch, img: numpy ndarray}`
-
-## stereo dictionary
-
-`{time: unix epoch, left: numpy ndarray, right: numpy ndarry}`
+/ | GET | Returns default dictionary | `{time: unix epoch, img: numpy ndarray}`
+/stereo | GET | Returns stereo dictionary | `{time: unix epoch, left: numpy ndarray, right: numpy ndarry}`

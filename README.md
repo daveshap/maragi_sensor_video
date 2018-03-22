@@ -11,7 +11,7 @@ provides out-of-the-box functionality for robotics and ai in the form of a simpl
 
 ## usage
 
-`python app.py <port>`
+`python app.py <port: optional/default: 6000>`
 
 Endpoint | Function | Description | Example
 --- | --- | --- | ---

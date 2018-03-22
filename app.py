@@ -1,6 +1,7 @@
 import cv2
 from flask import Flask
 import json
+import sys
 
 cam = cv2.VideoCapture(0)
 
@@ -18,16 +19,14 @@ def default():
     return str(snapshot())
 
 
-@app.route("/left")
-def default():
-    return str(snapshot())
-
-
-@app.route("/right")
+@app.route("/stereo")
 def default():
     return str(snapshot())
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=6000)
+    if sys.argv[1] is int:
+        app.run(port = sys.argv[1])
+    else:
+        app.run(host='0.0.0.0', port=6000)
     #app.run()

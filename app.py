@@ -41,6 +41,6 @@ def default():
 
 if __name__ == "__main__":
     if sys.argv[1] is int:
-        app.run(port = sys.argv[1])
+        app.run(port=sys.argv[1])
     else:
         app.run(port=6000)

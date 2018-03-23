@@ -1,3 +1,4 @@
+[maragi]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi.png "Viable MARAGI organization"
 # camera microservice
 
 provides out-of-the-box functionality for robotics and ai in the form of a simple and robust rest api
@@ -42,13 +43,17 @@ MARAGI is not a departure from conventional robotic design. Rather, it is simply
 
 Any successful automaton must be performing many mental operations simultaneously. This is one of the chief driving factors behind the selection of a microservices architecture. Whether you realize it or not, your brain is constantly performing many separate tasks in order to give you a coherent and graceful interaction and understanding of the world and yourself. Your eyes and optic neurons are detecting edges and deciphering this text without your conscious awareness of this. In the same way, many other functions of the brain occur in the unconscious realm. Your motor cortex can drive a walking behavior with minimal conscious input. Your body's sense of proprioception and balance is always being drawn upon for physical coordination and other tasks without any conscious effort. All of these things happen in parallel and automatically. 
 
-### Mesh Network (Not Layered)
+### Mesh Network (Semi Layered)
 
 To visualize the interaction of the microservices consider a mesh network. Many technological systems follow a layered or tiered model. 
 
 ![maragi]
 
-[maragi]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi.png "Viable MARAGI organization"
+You can roughly consider there to be at least three layers to the MARAGI design. These layers are based upon abstraction from interaction with the physical world. The layer of highest abstraction includes things like executive planning. The lowest layers of abstraction include things like motor controls and taking sensory input. 
+
+### Extensible 
+
+Infinite extensibility is inherent to a microservices architecture. Because of this, new functionality and capabilities can easily be added to any platform of MARAGI design. 
 
 ## Standards
 

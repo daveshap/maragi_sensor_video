@@ -46,7 +46,7 @@ Any successful automaton must be performing many mental operations simultaneousl
 
 To visualize the interaction of the microservices consider a mesh network. Many technological systems follow a layered or tiered model. 
 
-[maragi]
+![maragi]
 
 [maragi]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi.png "Viable MARAGI organization"
 

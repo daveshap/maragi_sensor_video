@@ -22,6 +22,8 @@ Endpoint | Function | Description | Example
 / | GET | Returns default dictionary | `{time: unix epoch, img0: serialized ndarray}`
 /stereo | GET | Returns stereo dictionary | `{time: unix epoch, img0: serialized ndarray, img1: serialized ndarray}`
 
+![maragi]
+
 # Microservice Architecture for Robotics and Artificial General Intelligence (MARAGI)
 
 ## Philosophy

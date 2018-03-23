@@ -66,8 +66,9 @@ Infinite extensibility is inherent to a microservices architecture. Because of t
 Each service should be:
 
 * strictly REST API based
-* as simple and concise as possible
-* as robust as possible
-* wholly self-contained
+* simple, generic, robust, and concise
+* wholly self-contained in it's own repository
 * ready to operate out of the box
 * available to any other service at any time
+* as platform agnostic as possible
+* minimally configurable

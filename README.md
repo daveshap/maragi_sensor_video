@@ -33,11 +33,15 @@ At it's core MARAGI is biomimetic. Human bodies, and more specifically the human
 
 Furthermore, MARAGI is guided by human metacognition. This is the conscious awareness of the process of thinking. Taking the time to tease apart the mental processes that go into various tasks, such as problem solving, searching, and being creative can provide insights and inspiration in the design of components, services, and organization. 
 
+### Iterative and Incremental Improvement
+
+There's no need to eat the whole elephant at once. Rome wasn't built in a day. Baby steps. Try, try again.  Fail forward. Learn as you go. Complex and sophisticated behaviors are emergent. Greater than the sum of its parts. 
+
 ## Architecture
 
 ### Sense, Think, Act
 
-MARAGI is not a departure from conventional robotic design. Rather, it is simply a paradigm by which to organize otherwise conventional robotic and AI software. The only potential difference is that MARAGI is not strictly limited to this three-cycle loop. This is due to the unstructured organization of the microservices.
+MARAGI is not a departure from conventional robotic design. Rather, it is simply a paradigm by which to organize otherwise conventional robotic and AI software. The only potential difference is that MARAGI is not strictly limited to this three-cycle loop. This is due to the unstructured organization of the microservices. MARAGI should always be sensing and thinking, although maybe not always acting. 
 
 ### Inherently Parallel
 
@@ -49,7 +53,7 @@ To visualize the interaction of the microservices consider a mesh network. Many 
 
 ![maragi]
 
-You can roughly consider there to be at least three layers to the MARAGI design. These layers are based upon abstraction from interaction with the physical world. The layer of highest abstraction includes things like executive planning. The lowest layers of abstraction include things like motor controls and taking sensory input. 
+You can roughly consider there to be at least three layers to the MARAGI design. These layers are based upon abstraction from interaction with the physical world. The layer of highest abstraction includes things like executive planning and moral imperatives. The lowest layers of abstraction include things like motor controls and taking sensory input. 
 
 ### Extensible 
 

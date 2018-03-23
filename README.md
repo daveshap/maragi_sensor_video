@@ -1,4 +1,5 @@
-[maragi]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi.png "Viable MARAGI organization"
+[maragi]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi.png "MARAGI Logo"
+[design]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi_design.png "Viable MARAGI organization"
 # camera microservice
 
 provides out-of-the-box functionality for robotics and ai in the form of a simple and robust rest api
@@ -51,7 +52,7 @@ Any successful automaton must be performing many mental operations simultaneousl
 
 To visualize the interaction of the microservices consider a mesh network. Many technological systems follow a layered or tiered model. 
 
-![maragi]
+![design]
 
 You can roughly consider there to be at least three layers to the MARAGI design. These layers are based upon abstraction from interaction with the physical world. The layer of highest abstraction includes things like executive planning and moral imperatives. The lowest layers of abstraction include things like motor controls and taking sensory input. 
 

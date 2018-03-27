@@ -1,6 +1,4 @@
-[maragi]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi.png "MARAGI Logo"
-[design]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi_design.png "Viable MARAGI organization"
-# camera microservice
+# Stereo Camera Microservice
 
 provides out-of-the-box functionality for robotics and ai in the form of a simple and robust rest api
 
@@ -21,6 +19,9 @@ Endpoint | Function | Description | Example
 --- | --- | --- | ---
 / | GET | Returns default dictionary | `{time: unix epoch, img0: serialized ndarray}`
 /stereo | GET | Returns stereo dictionary | `{time: unix epoch, img0: serialized ndarray, img1: serialized ndarray}`
+
+[maragi]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi.png "MARAGI Logo"
+[design]: https://github.com/benjaminharper2/cam_svc/blob/master/maragi_design.png "Viable MARAGI organization"
 
 ![maragi]
 

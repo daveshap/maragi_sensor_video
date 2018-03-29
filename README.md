@@ -1,6 +1,6 @@
 # Stereo Camera Microservice
 
-Stereo camera vision microservice for the purpose of supporting other microservices such as SLAM and object detection.
+[MARAGI](https://github.com/benjaminharper2/maragi) Stereo camera vision microservice for the purpose of supporting other microservices such as SLAM and object detection.
 
 ## Input
 

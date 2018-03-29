@@ -2,6 +2,14 @@
 
 provides out-of-the-box functionality for robotics and ai in the form of a simple and robust rest api
 
+## Input
+
+* One or two cameras
+
+## Output
+
+* JSON serialized numpy ndarray(s) of images
+
 ## requirements
 
 * python3
@@ -11,11 +19,9 @@ provides out-of-the-box functionality for robotics and ai in the form of a simpl
 * sys
 * cv2
 
-## usage
+## API
 
-`python app.py <port (optional), default 6000>`
-
-Endpoint | Function | Description | Example
+Endpoint | Method | Request | Response
 --- | --- | --- | ---
 / | GET | Returns default dictionary | `{time: unix epoch, img0: serialized ndarray}`
 /stereo | GET | Returns stereo dictionary | `{time: unix epoch, img0: serialized ndarray, img1: serialized ndarray}`

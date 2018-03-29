@@ -10,7 +10,7 @@ provides out-of-the-box functionality for robotics and ai in the form of a simpl
 
 * JSON serialized numpy ndarray(s) of images
 
-## requirements
+## Requirements
 
 * python3
 * flask
@@ -82,3 +82,12 @@ Each service should be:
 * available to any other service at any time
 * as platform agnostic as possible
 * minimally configurable
+
+### Documentation
+
+All READMEs should include:
+
+* Input
+* Output
+* Requirements
+* API documentation

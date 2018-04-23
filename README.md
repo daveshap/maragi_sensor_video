@@ -4,7 +4,7 @@
 
 ## Input
 
-* One or two cameras
+* One or two camera devices
 
 ## Output
 
@@ -16,12 +16,12 @@
 * flask
 * time
 * json
-* sys
 * cv2
+* threading
 
 ## API
 
 Endpoint | Method | Request | Response
 --- | --- | --- | ---
-`/` | GET | Returns default dictionary | `{time: unix epoch, img0: serialized ndarray}`
-`/stereo` | GET | Returns stereo dictionary | `{time: unix epoch, img0: serialized ndarray, img1: serialized ndarray}`
+`/cam` | GET | Returns mono or stereo image if available | `{time: unix epoch, img0: serialized ndarray, img1: if available}`
+`/cam` | POST | `{action: (un)subscribe, url: http://client:port/endpoint}` | Subscribe or unsubscribe request confirmation 

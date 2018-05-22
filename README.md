@@ -8,7 +8,7 @@ Basic camera service that publishes an image once per second
 
 ## Output
 
-Publishes images to any service that accepts "raw_video" as input
+Publishes images to any service that accepts "raw_video" as input. Uses HTTP PUT
 
 Field | Description
 --- | ---

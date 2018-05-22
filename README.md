@@ -1,27 +1,24 @@
 # Stereo Camera Microservice
 
-[MARAGI](https://github.com/benjaminharper2/maragi) Stereo camera vision microservice for the purpose of supporting other microservices such as SLAM and object detection.
+Basic camera service that publishes an image once per second
 
 ## Input
 
-* One or two camera devices
+* One Open-CV2 compatible camera
 
 ## Output
 
-* JSON serialized numpy ndarray(s) of images
+Publishes images to any service that accepts "raw_video" as input
+
+Field | Description
+--- | ---
+time | unix epoch
+uuid | uuid v4 identifier for sample
+type | 'raw_video'
+source | 'camera service'
+data | binary sample data as string (ndarray as list)
 
 ## Requirements
 
 * python3
-* flask
-* time
-* json
 * cv2
-* threading
-
-## API
-
-Endpoint | Method | Request | Response
---- | --- | --- | ---
-`/cam` | GET | Returns mono or stereo image if available | `{time: unix epoch, img0: serialized ndarray, img1: if available}`
-`/cam` | POST | `{action: (un)subscribe, url: http://client:port/endpoint}` | Subscribe or unsubscribe request confirmation 

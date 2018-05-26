@@ -22,3 +22,9 @@ data | binary sample data as string (ndarray as list)
 
 * python3
 * cv2
+
+## Sensor Nexus
+
+This service is part of the maragi sensor nexus
+
+![Maragi Sensor Nexus](/sensor_nexus.png "Maragi Sensor Nexus")

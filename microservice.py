@@ -4,49 +4,53 @@ import time
 import uuid
 import requests
 import json
+import flask
 
 
-directory = 'http://127.0.0.1:5000/directory'
-phonebook = []
+subscribers = []
+app_port = 6001
+app_uri = '/cam'
+app = flask.Flask(__name__)
 
 
 def publish_image(img):
-    global phonebook
     img = str(json.dumps(img.tolist(), separators=(',', ':')))
     t = time.time()
     u = uuid.uuid4()
     payload = {'time': str(t),
                'uuid': str(u),
-               'type': 'raw_video',
-               'source': 'camera service',
                'data': img}
-    for service in phonebook:
+    for svc_url in subscribers:
         try:
-            if service['input'] == 'raw_video':
-                print('POST to', service)
-                response = requests.request(method='PUT', url=service['svc_url'], json=payload)
-                print(response)
+            requests.request(method='PUT', url=svc_url, json=payload)
         except Exception as exc:
             print(exc)
 
 
-def get_phonebook():
-    # periodically updates the phonebook
-    global phonebook
+def cam_thread():
+    print('eyeball starting')
+    cam = cv2.VideoCapture(0)
     while True:
-        response = requests.request(method='GET', url=directory)
-        text = response.text
-        phonebook = json.loads(text)
-        time.sleep(60)
+        s, img = cam.read()
+        publish_image(img)
+        print('image published!', img.shape)
+        time.sleep(1)
+
+
+@app.route(app_uri, methods=['POST'])
+def default():
+    request = flask.request
+    payload = json.loads(request.data)
+    print(payload)
+    if request.method == 'POST':
+        if payload['action'] == 'subscribe':
+            if payload['url'] not in subscribers:
+                subscribers.append(payload['url'])
+                return json.dumps({'result': 'successfully added URL to subscribers list'})
+            else:
+                return json.dumps({'result': 'URL was already in subscribers list'})
 
 
 if __name__ == "__main__":
-    print('eyeball starting')
-    cam = cv2.VideoCapture(0)
-    phonebook_updater = threading.Thread(target=get_phonebook)
-    phonebook_updater.start()
-    while True:
-        s, img = cam.read()
-        publisher = threading.Thread(target=publish_image(img))
-        publisher.start()
-        time.sleep(1)
+    threading.Thread(target=cam_thread).start()
+    app.run(port=app_port)

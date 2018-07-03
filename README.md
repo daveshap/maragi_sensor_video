@@ -1,30 +1,32 @@
-# Stereo Camera Microservice
+# Basic Camera Microservice
 
-Basic camera service that publishes an image once per second
+Basic camera service that publishes one image per second to subscribed services. 
 
-## Input
+# API
 
-* One Open-CV2 compatible camera
+The REST API for this microservice is described below
 
-## Output
+Attribute | Value
+--- | ---
+URI | /cam
+Port | 6001
+Methods | POST
 
-Publishes images to any service that accepts "raw_video" as input. Uses HTTP PUT
+# Payload
+
+The JSON payload should be a dictionary with the following element(s)
+
+Element | Required | Value(s)
+--- | --- | ---
+action | true | Only accepts `subscribe`
+url | true | full service URL for where images are to be sent. Ex `http://127.0.0.1:5555/client`
+
+# Output
+
+Publishes one image per second to all URLs in the `subscribers` list
 
 Field | Description
 --- | ---
-time | unix epoch
+time | unix epoch timestamp
 uuid | uuid v4 identifier for sample
-type | 'raw_video'
-source | 'camera service'
-data | binary sample data as string (ndarray as list)
-
-## Requirements
-
-* python3
-* cv2
-
-## Sensor Nexus
-
-This service is part of the maragi sensor nexus
-
-![Maragi Sensor Nexus](/sensor_nexus.png "Maragi Sensor Nexus")
+data | JSON serialized ndarray of an image

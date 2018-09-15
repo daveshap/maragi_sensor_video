@@ -1,16 +1,5 @@
-# Mono Camera Microservice
+# Instructions
 
-This is a simple camera handling microservice that publishes images into the AMQP exchange for video input of MARAGI. Output has the following qualities:
-
-* numpy array
-* formatted as json 
-
-# AMQP
-
-* Publish to `maragi-rabbit`
-* This is the instance of RabbitMQ for MARAGI
-
-# Docker
-
-* code is intended to run in a docker container
-* maragi-rabbit is also a docker container
+1. CLONE this repo with `git clone https://github.com/daveshap/cam_svc.git`
+2. BUILD the Docker image with `docker build --tag maragi_cam --file Dockerfile .`
+3. LAUNCH the image with `./launch.sh` or `docker run -d --privileged --network maragi_net maragi_cam`

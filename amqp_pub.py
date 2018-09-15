@@ -4,12 +4,19 @@ import json
 import time
 
 
-def publish_video():
-    cam = cv2.VideoCapture(0)
-    parameters = pika.URLParameters('amqp://guest:guest@maragi-rabbit:5672/%2F')
+def open_amqp_conn():        
+    print('OPENING: AMQP connection')
+    credentials = pika.PlainCredentials('guest', 'guest')
+    parameters = pika.ConnectionParameters('MaragiRabbit', 5672, '/', credentials)
     connection = pika.BlockingConnection(parameters)
     channel = connection.channel()
-    print('AMQP connection established and camera is active')
+    print('ESTABLISHED: AMQP connection')
+    return channel
+
+
+def publish_video_loop(amqp):
+    cam = cv2.VideoCapture(0)
+    print('STARTING: video publish loop')
     while True:
         s, img = cam.read()
         img = str(json.dumps(img.tolist(), separators=(',', ':')))
@@ -20,6 +27,7 @@ def publish_video():
 if __name__ == '__main__':
     while True:
         try:
-            publish_video()
+            amqp = open_amqp_conn()
+            publish_video_loop(amqp)
         except Exception as oops:
             print('ERROR:', oops)

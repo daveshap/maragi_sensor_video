@@ -2,6 +2,7 @@ import pika
 import cv2
 import json
 import time
+import numpy
 
 
 def open_amqp_conn():        
@@ -19,8 +20,9 @@ def publish_video_loop(amqp):
     print('STARTING: video publish loop')
     while True:
         s, img = cam.read()
-        img = str(json.dumps(img.tolist(), separators=(',', ':')))
-        channel.basic_publish(exchange='sensor_video', body=img, routing_key='')
+        img_str = numpy.array2string(img)
+        payload = {'data':img_str}
+        channel.basic_publish(exchange='sensor_video', body=json.dumps(payload), routing_key='')
         time.sleep(0.25)
 
 

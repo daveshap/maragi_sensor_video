@@ -1,3 +1,13 @@
+# MARAGI Sensor Service
+* Video sensor service
+* _**Sensor Service**_ >> Model Service >> Executive Service >> Action Service
+
+Key | Value
+--- | ---
+`service_type` | `sensor`
+`amqp_consumes` | `<none>`
+`amqp_produces` | `sensor_video` 
+
 # Instructions
 
 1. **CLONE** this repo with `git clone https://github.com/daveshap/cam_svc.git`
